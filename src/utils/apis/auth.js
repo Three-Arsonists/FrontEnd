@@ -1,7 +1,7 @@
 import useGetRequest from './useGetRequest';
 import usePostRequest from './usePostRequest';
 
-export const SignUpUser = async ( postDto ) => {
-  const { response, error, loading } = usePostRequest('/signup', postDto);
-  return { response, error, loading }
+export const APISignUp = () => {
+  const { response, error, loading, fetchData:ReqSignUp } = usePostRequest( '/signup' );
+  return { response, error, loading, ReqSignUp }
 }
