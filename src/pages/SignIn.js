@@ -8,26 +8,31 @@ function SignIn() {
     const [passWord, setPassWord] = useState("");
     const typeId = (event) => setId(event.target.value);
     const typePassWord = (event) => setPassWord(event.target.value);
-    const [params ,setParams] = useState({});
+    
+    // 1. auth.js의 APISignUp 호출한다 
     const { response, error, loading, ReqSignUp } = APISignUp();
-
+    const [params, setParams] = useState();
+    
     const onSignUp = useCallback(() => {
         console.log("CLICK !!!!!")
-        setParams({userId : id, password : passWord, username: "jawoon", email :"test@test.co.kr", birth: "1993/12/04"})
-    },[id, passWord]);
-    
-    useEffect(()=> {
-        console.log("[AXIOS 요청] : ",response, error, loading)
-    },[response,error,loading])
-
-    useEffect(()=> {
-        console.log("[onChange] : ",id, passWord)
-    },[id,passWord])
-
-    useEffect(()=> {
-        console.log("[Param] : ", params)
         ReqSignUp(params);
-    },[params])
+    },[params]);
+    
+    // [시나리오 1] : axios 응답 결과 로그 
+    // useEffect(() => {
+    //     console.log("[AXIOS 응답 결과] : ", response, error, loading)
+    // },[response, error, loading])
+
+    // [시나리오 2] : axios payload 파라미터 인자 확인 로그 
+    // useEffect(() => {
+    //     console.log("[PARAMS] : ", params)
+    // },[params])
+
+    useEffect(() => {
+        console.log("[onChange] : ", id, passWord)
+        let today = new Date();
+        setParams({userId : id, password : passWord, username: "jawoon", email :"test@test.co.kr", birth: today})
+    },[id, passWord])
 
     return <div className={styles.loginform}>
         <div className={styles.container}>
