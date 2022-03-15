@@ -1,0 +1,39 @@
+.container {
+    width: 300px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    margin: auto auto 20px auto;
+    
+}
+
+.inputbox {
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.alarm {
+    color:#0068ff;
+    font-size: 18px;
+}
+
+.btn {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    color: white;
+    background-color: #0068ff;
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 13px 20px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+    margin-right: 15px;
+}
+
+.loginform {
+    margin: 210px auto auto auto;
+}
